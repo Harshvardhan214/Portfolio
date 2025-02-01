@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styl.css">
+  <title>portfolio</title>
+</head>
+
+<body>
+
+
+
+  <div id="navbar">
+    <a class="active" href="#Home">Home</a>
+    <a href="#About">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="container1" id="Home">
+        <h2><i class="material-icons" style="font-size:80px;color:rgb(241, 210, 245);">all_inclusive</i></h2>
+        <h2><img src="https://cdn.pixabay.com/photo/2024/04/16/21/11/ai-generated-8700791_1280.jpg" alt=""></h2><br>
+        <h3>I'm a</h3>
+        <h2>Web UI/UX Designer<br>
+          Front-end Developer</h2>
+        <span>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE0GZ2dKfnpLXotVEV8UvNGKTxfFSfcb280A&s" alt="call on">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/022/257/067/small/icon-media-social-instagram-free-vector.jpg" alt="instagram">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTagwUJR5JJfZLwib1Jn3dFy4y7GrkatBhZg&s" alt="linkedin">
+          <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3N-x8ggNE4jv_Wqwwr6T_9J9t68zMfUEueQ&s" alt="mail me">
+        </span>
+      </div>
+      <h1> I'm Harsh Vardhan Soni <br> Digital designer and <br>illustrator </h1>
+
+    </div>
+
+    <div class="About" id="About">
+      <div class="mypic">
+        <img src="https://i.pinimg.com/236x/5b/f3/e2/5bf3e204f92de48ea44c607f0c4b6674.jpg" alt="my img">
+
+      </div>
+      <div class="aboutme">
+        <p> <strong>About Me</strong><br>
+          I'm a web designer and developer. I'm a creative person and I
+          love to create new things.I stareted as a intern ,so i hope that i can learn more about my work field.
+          I always give my best in everthing.
+          At the and i'm going to work with my collegue.
+        </p>
+
+        <div class="info">
+          <span>
+            <h4>Main skill
+              <p><B>Language:</B>HTML,CSS, <br>Java-Script <br><br><B>Soft Skills:</B> Communication, teamwork, <br> and
+                problem-solving</p>
+            </h4>
+            <h4>Expreance
+              <p> <b>EXP:</b>Fresher</p>
+            </h4>
+            <h4>Education
+              <p><B>Secondary:</B><br>Science-Math <br><br><B>Graduation:</B> <br>BCA(Bechlor OF Computer Application)
+              </p>
+            </h4>
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="contact" id="contact">
+      <div class="Hireme">
+        <h1>Hire me.</h1>
+        <p>I am available for freelance work.Contact with me via <br>phone:
+          <b>7878514019</b> or <b> email:harshvardhansoni214@gmail.com.</b>
+        </p>
+
+        <form action="#php">
+          <input type="text" name="name" placeholder="Your Name*" required><br>
+          <input type="email" name="email" placeholder="Your Email*" required><br>
+          <input type="text" name="subject" placeholder="Subject*" required><br>
+          <textarea name="message" placeholder="Your Message*" required></textarea><br>
+          <button>submit</button>
+        </form>
+      </div>
+      <div class="contact1">
+        <img src=" https://i.pinimg.com/originals/9a/8c/b6/9a8cb6d850fe52df1dc18125ad3d9245.jpg" alt="">
+      </div>
+    </div>
+  </div>
+    
+  <div class="language">
+     <h1>Language</h1>
+     <span>
+      <div class="A">
+        <p> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt=""></p><br>
+        <p1><b>HTML</b> </p1><br>
+         <p2>html is a very classiy language
+          <br>it is used for web development <br>lern more <a href="https://www.w3schools.com/html/">Html</a></p2>
+
+         </p2>
+      </div>
+     </span>
+  </div>
+
+
+
+
+  <script>
+    window.onscroll = function () { myFunction() };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
