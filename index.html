@@ -28,6 +28,26 @@
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
         }
 
+        [data-theme="dark"] {
+            --bg: #121212;
+            --bg-2: #1a1a1a;
+            --card: #1f1f1f;
+            --card-hover: #2a2a2a;
+            --border: #333333;
+            --border-hover: #0d6efd;
+            --text: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --text-faint: #888888;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+        }
+
+        body, .navbar.scrolled, .float-chip, .slider-arrow {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .card, .stat-card, .edu-card, .skill-card, .exp-card, .cert-card, .project-card, .contact-card {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -94,7 +114,7 @@
 
         .navbar.scrolled {
             padding: 0.55rem 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: var(--bg) 85%;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid #e9ecef;
@@ -156,6 +176,11 @@
         .nav-link.active {
             color: var(--primary);
             background: rgba(13, 110, 253, 0.1);
+        }
+
+        [data-theme="dark"] .nav-link:hover {
+            color: var(--text);
+            background: #333;
         }
 
         .nav-cta-btn {
@@ -457,8 +482,8 @@
             position: absolute;
             display: flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.85);
+            gap: 8px; 
+            background: color-mix(in srgb, var(--bg) 85%, transparent);
             backdrop-filter: blur(12px);
             border: 1px solid #e9ecef;
             border-radius: 14px;
@@ -631,6 +656,10 @@
             color: var(--text-dim);
             margin-bottom: 1.1rem;
             font-size: 0.98rem;
+        }
+
+        [data-theme="dark"] .about-photo .photo-caption {
+            background: linear-gradient(to top, rgba(18, 18, 18, 0.9), transparent);
         }
 
         .about-info-list {
@@ -1067,8 +1096,7 @@
         }
 
         .project-viewport {
-            overflow: hidden;
-            padding: 12px 10px 18px;
+             padding: 12px 10px 18px;
             margin: 0 -10px;
         }
 
@@ -1090,7 +1118,7 @@
             transform: translateY(-50%);
             z-index: 6;
             width: 44px;
-            height: 44px;
+            height: 44px; 
             border-radius: 50%;
             border: 1px solid var(--border);
             background: rgba(255, 255, 255, 0.85);
@@ -1105,6 +1133,10 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
             font-family: inherit;
+        }
+        
+        [data-theme="dark"] .slider-arrow {
+            background: rgba(31, 31, 31, 0.85);
         }
 
         .slider-arrow:hover {
@@ -1259,7 +1291,7 @@
         .thumb-bar {
             display: flex;
             align-items: center;
-            gap: 6px; 
+            gap: 6px;
             padding: 9px 12px;
             background: rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid var(--border);
@@ -1278,7 +1310,7 @@
 
         .tb-url {
             font-size: 0.65rem;
-            color: var(--text-faint); 
+            color: var(--text-faint);
             background: rgba(255, 255, 255, 0.05);
             padding: 3px 10px;
             border-radius: 20px;
@@ -1287,6 +1319,10 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             max-width: 72%;
+        }
+
+        [data-theme="dark"] .thumb-bar, [data-theme="dark"] .tb-url {
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .thumb-img {
@@ -1588,7 +1624,7 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: 0.7rem;
-                transition: right 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+                transition: right 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
                 border-left: 1px solid var(--border);
                 padding: 2rem;
             }
@@ -1729,7 +1765,8 @@
                         <li><span class="li-icon">🎓</span> MCA — RTU</li>
                         <li><span class="li-icon">📍</span> Sirsi Road, Jaipur</li>
                         <li><span class="li-icon">💼</span> WordPress Developer at BizzBooster</li>
-                        <li><span class="li-icon">✉️</span> Harshvardhansoni214@gmail.com</li>
+                        <li><span class="li-icon">📞</span> <a href="tel:+917878514019">+91 78785 14019</a></li>
+                        <li><span class="li-icon">✉️</span> <a href="mailto:Harshvardhansoni214@gmail.com">Harshvardhansoni214@gmail.com</a></li>
                     </ul>
                     <a href="#contact" class="btn btn-primary">Let's Work Together →</a>
                 </div>
@@ -1984,8 +2021,7 @@
                         <span>WordPress</span><span>Elementor</span><span>TutorLMS</span><span>WooCommerce</span>
                     </div>
                     <p>Comprehensive education &amp; LMS platform built on WordPress with Elementor, TutorLMS course management, and WooCommerce-powered enrollment and checkout.</p>
-                    <div class="features">Features: Course Catalog, Instructor Profiles, Student Testimonials, Blog, Seamless Enrollment</div>
-                    <a href="https://aiteduworld.in/" target="_blank" class="project-link">Visit Website →</a>
+                     <a href="https://aiteduworld.in/" target="_blank" class="project-link">Visit Website →</a>
                 </div>
 
                 <div class="project-card reveal-scale" style="transition-delay: 0.05s">
@@ -2174,29 +2210,115 @@
                         <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React.js</span>
                     </div>
                     <p>Responsive fashion e-commerce prototype with interactive product cards, image galleries, and seamless cross-device experience.</p>
-                    <div class="features">Features: Home Page, Men's/Women's Collection, Sale Section, New Arrivals</div>
-                    <a href="https://aiiry.netlify.app/" target="_blank" class="project-link">Live Demo →</a>
+                     <a href="https://aiiry.netlify.app/" target="_blank" class="project-link">Live Demo →</a>
                 </div>
 
                 <div class="project-card reveal-scale" style="transition-delay: 0.5s">
-                    <div class="project-thumb project-thumb-placeholder">
+                    <a href="https://earthkingdom.in/" target="_blank" class="project-thumb">
                         <div class="thumb-bar">
                             <span class="tb-dot tb-red"></span>
                             <span class="tb-dot tb-yellow"></span>
                             <span class="tb-dot tb-green"></span>
-                            <span class="tb-url">Krish Food &amp; Grocery</span>
+                            <span class="tb-url">earthkingdom.in</span>
                         </div>
                         <div class="thumb-img">
-                            <span class="thumb-placeholder-icon">🛒</span>
+                            <img src="https://s0.wp.com/mshots/v1/earthkingdom.in?w=600&h=400" alt="Earth Kingdom preview" loading="lazy">
+                            <span class="thumb-open">↗</span>
                         </div>
-                    </div>
-                    <h3>Krish Food &amp; Grocery</h3>
+                    </a>
+                    <h3>Earth Kingdom</h3>
                     <div class="tech-tags">
-                        <span>React.js</span>
+                        <span>WordPress</span><span>Elementor</span><span>SEO</span>
                     </div>
-                    <p>Responsive grocery shopping platform with reusable components, dynamic product filtering, and shopping cart functionality.</p>
-                    <div class="features">Features: Product Listings, Category Filters, Cart, Mobile First</div>
+                    <p>Modern lifestyle and brand website designed to communicate the business clearly with a clean layout, strong visuals, and smooth mobile experience.</p>
+                    <a href="https://earthkingdom.in/" target="_blank" class="project-link">Visit Website →</a>
                 </div>
+
+                <div class="project-card reveal-scale" style="transition-delay: 0.55s">
+                    <a href="https://vevlyproducts.com/" target="_blank" class="project-thumb">
+                        <div class="thumb-bar">
+                            <span class="tb-dot tb-red"></span>
+                            <span class="tb-dot tb-yellow"></span>
+                            <span class="tb-dot tb-green"></span>
+                            <span class="tb-url">vevlyproducts.com</span>
+                        </div>
+                        <div class="thumb-img">
+                            <img src="https://s0.wp.com/mshots/v1/vevlyproducts.com?w=600&h=400" alt="Vevly Products preview" loading="lazy">
+                            <span class="thumb-open">↗</span>
+                        </div>
+                    </a>
+                    <h3>Vevly Products</h3>
+                    <div class="tech-tags">
+                        <span>WordPress</span><span>WooCommerce</span><span>Product Pages</span>
+                    </div>
+                    <p>Product-focused storefront curated for easy browsing, brand trust, and an optimized shopping flow for customers.</p>
+                    <a href="https://vevlyproducts.com/" target="_blank" class="project-link">Visit Website →</a>
+                </div>
+
+                <div class="project-card reveal-scale" style="transition-delay: 0.6s">
+                    <a href="https://hrmfab.com/" target="_blank" class="project-thumb">
+                        <div class="thumb-bar">
+                            <span class="tb-dot tb-red"></span>
+                            <span class="tb-dot tb-yellow"></span>
+                            <span class="tb-dot tb-green"></span>
+                            <span class="tb-url">hrmfab.com</span>
+                        </div>
+                        <div class="thumb-img">
+                            <img src="https://s0.wp.com/mshots/v1/hrmfab.com?w=600&h=400" alt="HRM Fab preview" loading="lazy">
+                            <span class="thumb-open">↗</span>
+                        </div>
+                    </a>
+                    <h3>HRM Fab</h3>
+                    <div class="tech-tags">
+                        <span>WordPress</span><span>Elementor</span><span>Business</span>
+                    </div>
+                    <p>Corporate brand website built with a professional structure, service-focused sections, and responsive design for credibility and conversions.</p>
+                    <a href="https://hrmfab.com/" target="_blank" class="project-link">Visit Website →</a>
+                </div>
+
+                <div class="project-card reveal-scale" style="transition-delay: 0.65s">
+                    <a href="https://arogyavista.com/" target="_blank" class="project-thumb">
+                        <div class="thumb-bar">
+                            <span class="tb-dot tb-red"></span>
+                            <span class="tb-dot tb-yellow"></span>
+                            <span class="tb-dot tb-green"></span>
+                            <span class="tb-url">arogyavista.com</span>
+                        </div>
+                        <div class="thumb-img">
+                            <img src="https://s0.wp.com/mshots/v1/arogyavista.com?w=600&h=400" alt="Arogya Vista preview" loading="lazy">
+                            <span class="thumb-open">↗</span>
+                        </div>
+                    </a>
+                    <h3>Arogya Vista</h3>
+                    <div class="tech-tags">
+                        <span>WordPress</span><span>Healthcare</span><span>Lead Gen</span>
+                    </div>
+                    <p>Healthcare-focused website with clear information architecture, trust-building sections, strong calls to action, and clean responsive presentation.</p>
+                    <a href="https://arogyavista.com/" target="_blank" class="project-link">Visit Website →</a>
+                </div>
+
+                <div class="project-card reveal-scale" style="transition-delay: 0.7s">
+                    <a href="https://uniqueworldjewels.com/" target="_blank" class="project-thumb">
+                        <div class="thumb-bar">
+                            <span class="tb-dot tb-red"></span>
+                            <span class="tb-dot tb-yellow"></span>
+                            <span class="tb-dot tb-green"></span>
+                            <span class="tb-url">uniqueworldjewels.com</span>
+                        </div>
+                        <div class="thumb-img">
+                            <img src="https://s0.wp.com/mshots/v1/uniqueworldjewels.com?w=600&h=400" alt="Unique World Jewels preview" loading="lazy">
+                            <span class="thumb-open">↗</span>
+                        </div>
+                    </a>
+                    <h3>Unique World Jewels</h3>
+                    <div class="tech-tags">
+                        <span>WordPress</span><span>Luxury</span><span>E-commerce</span>
+                    </div>
+                    <p>Premium jewelry brand website combining elegant design, catalog presentation, and a conversion-friendly experience across devices.</p>
+                    <a href="https://uniqueworldjewels.com/" target="_blank" class="project-link">Visit Website →</a>
+                </div>
+
+                 
                     </div>
                 </div>
                 <button class="slider-arrow slider-prev" aria-label="Previous projects">&#10094;</button>
@@ -2218,7 +2340,7 @@
                 <div class="contact-card reveal" style="transition-delay: 0.05s">
                     <div class="contact-icon">📞</div>
                     <h4>Phone</h4>
-                    <span>7878514019</span>
+                    <a href="tel:+917878514019">+91 78785 14019</a>
                 </div>
                 <div class="contact-card reveal" style="transition-delay: 0.1s">
                     <div class="contact-icon">✉️</div>
@@ -2228,12 +2350,22 @@
                 <div class="contact-card reveal" style="transition-delay: 0.15s">
                     <div class="contact-icon">📍</div>
                     <h4>Location</h4>
-                    <span>Sirsi Road, Jaipur</span>
+                    <a href="https://maps.google.com/?q=Sirsi+Road,+Jaipur" target="_blank" rel="noreferrer">Sirsi Road, Jaipur</a>
                 </div>
                 <div class="contact-card reveal" style="transition-delay: 0.2s">
                     <div class="contact-icon">🐙</div>
                     <h4>GitHub</h4>
-                    <a href="https://github.com/harshvardhan214" target="_blank">github.com/harshvardhan214</a>
+                    <a href="https://github.com/harshvardhan214" target="_blank" rel="noreferrer">github.com/harshvardhan214</a>
+                </div>
+                <div class="contact-card reveal" style="transition-delay: 0.25s">
+                    <div class="contact-icon">💬</div>
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/917878514019?text=Hi%20Harsh%2C%20I%20want%20to%20discuss%20a%20project%20with%20you." target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+                </div>
+                <div class="contact-card reveal" style="transition-delay: 0.3s">
+                    <div class="contact-icon">💼</div>
+                    <h4>LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/harsh-vardhan-soni-9a3a212a4/" target="_blank" rel="noreferrer">linkedin.com/in/harsh-vardhan-soni</a>
                 </div>
             </div>
         </div>
